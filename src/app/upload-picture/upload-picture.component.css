@@ -1,0 +1,110 @@
+
+.container{
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  max-height: 1000px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+.drag-drop-file-container{
+  padding: 20px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.browse-file-container {
+  background-image: url("/../assets/cloud.png");
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: center;
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  border: 3px dashed #1C8ADB;
+  border-radius: 20%;
+}
+
+.browse-file-container:hover {
+  cursor: pointer;
+  background-color: #9ecbec !important;
+  opacity: 0.8;
+}
+
+.title{
+  text-align: center;
+  color: #438BBB;
+  height: 20px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.drag-drop-info{
+  text-align: center;
+  padding-top: 5px;
+}
+
+.browse-info{
+  text-align: center;
+  padding-top: 205px;
+}
+
+.cropper-container{
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+.cropper{
+  padding: 20px;
+  width: 400px;
+  height: 400px;
+  --cropper-outline-color: rgba(67, 139, 187, 0.514);
+  /* --cropper-overlay-color: rgba(67, 139, 187, 0.514); */
+}
+
+.clear-button{
+  float: right;
+  border: none;
+  opacity: 0.4;
+  cursor: pointer;
+  padding-bottom: -50px;
+}
+
+.clear-button:hover {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+  background-color:  #F6A93D;
+  border-radius: 100%;
+}
+
+.image-cropper{
+  padding: 0;
+  border-radius: 10px;
+}
+
+p{
+  font-size: 15px;
+  color: #438BBB;
+  opacity: 0.8;
+}
+
+.error-text{
+  text-align: center;
+  color: rgba(255, 51, 0, 0.815);
+  white-space: pre-wrap;
+}
+
+.buttons{
+  display: flex;
+  padding-top: 35px;
+  padding-bottom: 15px;
+  justify-content: center;
+}
+.submit-btn-container{
+  padding-right: 15px;
+}
+
+.cancel-btn-container{
+  padding-left: 15px;
+}

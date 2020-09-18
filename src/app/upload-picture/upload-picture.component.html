@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="drag-drop-file-container" *ngIf="!droppedSourceImage && !imageChangedEvent">
+    <h6 class="title">Upload a picture</h6> 
+    <div #dropInput 
+      appDragDrop 
+      class="browse-file-container" 
+      (click)="browseInput.click()" 
+      (onFileDropped)="getImage($event)">
+
+      <input #browseInput 
+        type="file" 
+        (change)="getImage($event)" 
+        accept=".jpg,.jpeg,.png,.gif" 
+        hidden>
+
+      <p class="drag-drop-info">Drag-&-Drop an image</p>
+      <p class="browse-info">or click here to browse</p>
+    </div>
+  </div>
+
+  <div class="cropper-container" *ngIf="imageChangedEvent || droppedSourceImage">
+    <div class="cropper">
+      <svg  (click)="reset()" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-x clear-button" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+      </svg>
+      <image-cropper
+        class="image-cropper"
+        [imageChangedEvent]="imageChangedEvent" 
+        [maintainAspectRatio]="true"
+        [resizeToWidth]="256"
+        [roundCropper]="roundCropper"
+        backgroundColor="#FFFFFF"
+        [imageBase64]="droppedSourceImage"
+        format="png, jpg, gif"
+        (imageCropped)="readyCropperImage($event)"
+        (loadImageFailed)="loadImageFailed()">
+      </image-cropper>
+    </div>  
+  </div>
+  <p class="error-text" *ngIf="displayValidationError">{{errorMessage}}</p>
+  <footer class="buttons">
+    <div class="submit-btn-container">
+    <button
+      nbButton 
+      status="primary" 
+      (click)="submitCroppedImage()" 
+      disabled="{{isSubmitBtnDisabled}}">
+      SUBMIT
+    </button>
+  </div>
+
+  <div class="cancel-btn-container">
+    <button
+      nbButton 
+      status="warning" 
+      (click)="closeDialog()">
+      CANCEL
+    </button>
+  </div>
+  </footer>
+</div>

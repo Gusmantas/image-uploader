@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes/default';
+
+.layout{
+  background-image: url("./assets/bakground.png");
+  -webkit-background-size: cover;
+}
+
+.gallery-item {
+  position: relative;
+  float: right;
+  right: 160px;
+  top: 400px;
+}
+
+.gallery-img {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+  height: 220px;
+  width: 220px;
+  border-radius: 100%;
+  display: block;
+   
+}
+.gallery-item:hover .gallery-img {
+  opacity: 0.6;
+  -webkit-filter: brightness(50%);
+  transition: all 0.3s ease;
+}
+
+.gallery-button {
+  opacity: 0.3;
+  display: block;
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  margin: auto;
+  top: 0px;
+  left: 0;
+  right: 0px;
+  bottom: 0;
+  fill: white;
+  cursor: pointer;
+}
+
+.gallery-item:hover .gallery-button {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+
+// Nebular buttons from upload-picture.component: 
+.nb-theme-default [nbButton].appearance-filled.status-warning {
+  background-color: #f08100;
+  border-color: #f08100;
+  color: #fff;
+  border-style: solid;
+}
+
+.nb-theme-default [nbButton].appearance-filled.status-warning:hover{
+  background-color: #F6A93D;
+  border-color: #F6A93D;
+}
+
+.nb-theme-default [nbButton].appearance-filled.status-primary {
+  background-color: #306da0;
+  border-color: #306da0;
+  color: #fff;
+}
+
+.nb-theme-default [nbButton].appearance-filled.status-primary:hover {
+  background-color: #6FB3D6;
+  border-color: #6FB3D6;
+}
+
